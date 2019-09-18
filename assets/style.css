@@ -1,0 +1,19 @@
+body{
+    background:teal;
+}
+button{
+    margin:10px;
+}
+#gifs_place{
+    display:flex;
+    flex-wrap: wrap;
+    
+}
+.gifimg{
+    display:block;
+    margin:1rem;
+    
+}
+aside{
+    float:right;
+}
