@@ -1,8 +1,8 @@
-var sin;
+// var sin;
 var sins = ["pride", "greed", "wrath", "lust", "envy", "sloth"]
-var button;
-var sinNum=sins.length+1;
-$("#sinnum").append(sinNum)
+// var button;
+var sinNum = sins.length + 1;
+// $("#sinnum").append(sinNum)
 
 
 renderButtons()
@@ -13,25 +13,24 @@ function renderButtons() {
         button.text(sins[i])
         button.attr("data-sin", sins[i])
         $("#buttons").append(button)
-        $("#sin-num").append(sinNum);
-        
-        
+        $("#sinnum").text(sinNum)
     }
 }
-$("button").on("click", function () {
+
+$("#buttons").on("click", "button", function () {
+    // $("#gifDiv").empty().
     console.log(this)
 
     var sin = $(this).attr("data-sin");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q="
-    + sin +
-    "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
+        + sin + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
     $.ajax({
         url: queryURL,
         method: "GET"
     })
-        .then(function (response) {
-            console.log(response);
-            var results = response.data;
+    .then(function (response) {
+        console.log(response);
+        var results = response.data;
             for (var i = 0; i < results.length; i++) {
                 var gifDiv = $("<div>");
                 gifDiv.addClass("gifimg");
@@ -43,7 +42,7 @@ $("button").on("click", function () {
                 gifDiv.append(p, gifImage);
                 $("#gifs_place").prepend(gifDiv);
             }
-            
+
         });
 })
 
@@ -54,4 +53,5 @@ $("#add-sin").on("click", function (event) {
     sins.push(sinx);
     renderButtons()
     console.log(sins)
+    // $("#sin-num").append(sinNum);      
 })

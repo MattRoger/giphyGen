@@ -1,5 +1,6 @@
 body{
-    background:teal;
+    background-image: url("../assets/images/background.jpg");
+    background-size:100%;
 }
 button{
     margin:10px;
@@ -7,8 +8,19 @@ button{
 #gifs_place{
     display:flex;
     flex-wrap: wrap;
-    
+    z-index: 50;
 }
+*{
+color:whitesmoke;
+/* font-family: 'Emilys Candy', cursive; */
+font-family: 'Rye', cursive;
+}
+h1{
+    font-family: 'Henny Penny', cursive;
+    font-size: 3rem;
+    text-align: center;
+}
+
 .gifimg{
     display:block;
     margin:1rem;
@@ -16,4 +28,22 @@ button{
 }
 aside{
     float:right;
+}
+label,
+input{
+ 
+    padding:1rem;
+}
+form{
+    margin-right:1rem;
+}
+input{
+    color:black;
+}
+
+button{
+    background:whitesmoke;
+    color:midnightblue;
+    font-size:1.5rem;
+    padding:.55rem;
 }
