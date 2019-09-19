@@ -28,6 +28,7 @@ h1{
 }
 aside{
     float:right;
+    width:25%;
 }
 label,
 input{

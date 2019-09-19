@@ -18,12 +18,11 @@ function renderButtons() {
 }
 
 $("#buttons").on("click", "button", function () {
-    // $("#gifDiv").empty().
+    $("#gifs_place").empty();
     console.log(this)
-
     var sin = $(this).attr("data-sin");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q="
-        + sin + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
+    + sin + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -53,5 +52,8 @@ $("#add-sin").on("click", function (event) {
     sins.push(sinx);
     renderButtons()
     console.log(sins)
+    $("#sin-new").val("Add A Sin")
     // $("#sin-num").append(sinNum);      
 })
+
+
