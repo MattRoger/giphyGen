@@ -1,5 +1,6 @@
 # 7 Deadly Sins giphyGen :smiling_imp:
 This is page searches giphy and displays the results
+[See The App Live](https://mattroger.github.io/giphyGen/)
 
 ## Motivation
 Click on a button with a sin in it and the page will search the giphy api for that search term using ajax. The page will display 10 paused gifs. To play a gif, simply click on it, to pause it, click again.
@@ -10,7 +11,7 @@ The goal of this project is to demonstrate usage of javascript functions to call
 
 
 ## Build Status
-complete
+complete :checkered_flag:
 
 ## Tech/framework used
 * JavaScript 
@@ -20,7 +21,7 @@ complete
 ## Code style
 
 #### Heading Title
-
+This is how I display the number of sins for the heading. Each time a sin is added, the count increases.
 Html
 ```html
 <h1><span id="sinnum"></span>Deadly Sins</h1>
