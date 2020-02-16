@@ -12,10 +12,15 @@ The goal of this project is to demonstrate usage of javascript functions to call
 ## Build Status
 complete
 
+## Tech/framework used
+* JavaScript 
+* jQuery 
+* gify api
+
 ## Code style
 If you're using any code style like xo, standard etc. That will help others while contributing to your project. Ex
 
-## Tech/framework used
+
 
 ## Features
 
