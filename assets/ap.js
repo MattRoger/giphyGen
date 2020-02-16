@@ -2,11 +2,12 @@
 var sins = ["pride", "greed", "wrath", "lust", "envy", "sloth"]
 // var button;
 var sinNum = sins.length + 1;
-// $("#sinnum").append(sinNum)
-
+$("#sinnum").text(sinNum)
 
 renderButtons()
 
+
+    $("#sinnum").text(sinNum)
 function renderButtons() {
     $("#buttons").empty()
     for (var i = 0; i < sins.length; i++) {
@@ -14,7 +15,6 @@ function renderButtons() {
         button.text(sins[i])
         button.attr("data-sin", sins[i])
         $("#buttons").append(button)
-        $("#sinnum").text(sinNum)
     }
 }
 
@@ -37,13 +37,7 @@ $("#buttons").on("click", "button", function () {
                 var rating = results[i].rating;
                 var p = $("<p>").text("Rating: " + rating);
                 var gifImage = $("<img>").attr("data-state", "still").attr("data-animate", results[i].images.fixed_height.url).attr("data-still", results[i].images.fixed_height_still.url)
-                gifImage.attr("src", results[i].images.fixed_height_still.url);
-                // gifImage.attr("data-state","animated", );
-                
-                // gifImage.attr("data-state","still", results[i].images.fixed_height_still.url);
-                
-                
-
+                gifImage.attr("src", results[i].images.fixed_height_still.url);               
                 gifImage.attr("alt", "img failed to load");
                 gifDiv.append(p, gifImage);
                 $("#gifs_place").prepend(gifDiv);
@@ -54,15 +48,8 @@ $("#buttons").on("click", "button", function () {
     })
     $("#gifs_place").on("click", "img", function () {
         var state = $(this).attr("data-state");
-    
-    
-        var stillURL = $(this).attr("data-still");
-        // var stillURL=$(this).attr("src", results[i].images.fixed_height_still.url);
-    
-        var animateURL = $(this).attr("data-animate")
-        // var animateURL=$(this).attr("src", results[i].images.fixed_height.url)
-    
-    
+            var stillURL = $(this).attr("data-still");    
+        var animateURL = $(this).attr("data-animate")    
         if (state === "still") {
             $(this).attr({
                 "src": animateURL,
@@ -87,7 +74,7 @@ $("#buttons").on("click", "button", function () {
     sins.push(sinx);
     renderButtons()
     console.log(sins)
-    $("#sin-new").val("Add A Sin")
-    // $("#sin-num").append(sinNum);      
+    $("#sin-new").val("Add A Sin")   
+    $("#sinnum").empty().text(sinNum);      
 })
 
