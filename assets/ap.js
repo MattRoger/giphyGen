@@ -74,7 +74,8 @@ $("#buttons").on("click", "button", function () {
     sins.push(sinx);
     renderButtons()
     console.log(sins)
-    $("#sin-new").val("Add A Sin")   
+    $("#sin-new").val("Add A Sin")
+    sinNum++;   
     $("#sinnum").empty().text(sinNum);      
 })
 
