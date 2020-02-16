@@ -110,6 +110,7 @@ How The gifs play
 ```
 
 ## Features
+Each time a new sin is added, the header goes up by one.
 
 ## Installation
 * :trident: Fork it
@@ -117,11 +118,10 @@ How The gifs play
 
 
 ## API Reference
-
-## Tests
+[Giphy](https://developers.giphy.com/)
 
 ## How to use?
-
+Add a sin, then click on the button. To get a gif to play or stop simply click on it.
 
 ## Credits / Contact information
 * @MattRoger 
