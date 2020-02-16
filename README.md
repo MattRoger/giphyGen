@@ -18,8 +18,15 @@ complete
 * gify api
 
 ## Code style
-If you're using any code style like xo, standard etc. That will help others while contributing to your project. Ex
 
+#### Heading Title
+ ```javascript
+ // sin array is the starting array
+var sins = ["pride", "greed", "wrath", "lust", "envy", "sloth", "Wrath"]
+// Used to increase the number of sins in the heading
+var sinNum = sins.length;
+$("#sinnum").text(sinNum)
+ ```
 
 
 ## Features
