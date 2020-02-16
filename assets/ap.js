@@ -1,7 +1,6 @@
-// var sin;
-var sins = ["pride", "greed", "wrath", "lust", "envy", "sloth"]
-// var button;
-var sinNum = sins.length + 1;
+// sin array is the starting array
+var sins = ["pride", "greed", "wrath", "lust", "envy", "sloth", "Wrath"]
+var sinNum = sins.length;
 $("#sinnum").text(sinNum)
 
 renderButtons()
