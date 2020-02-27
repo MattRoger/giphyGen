@@ -18,67 +18,39 @@ complete :checkered_flag:
 ## Tech/framework used
 * JavaScript 
 * jQuery 
-* gify api
+* Gify API
+
+## Features
+Each time a new sin is added, the header goes up by one.
 
 ## Code style
 
-#### Heading Title
-This is how I display the number of sins for the heading. Each time a sin is added, the count increases.
-Html
-```html
-<h1><span id="sinnum"></span>Deadly Sins</h1>
-```
-JavaScript
- ```javascript
- // sin array is the starting array
-var sins = ["pride", "greed", "wrath", "lust", "envy", "sloth", "Wrath"]
-// Used to increase the number of sins in the heading
-var sinNum = sins.length;
-$("#sinnum").text(sinNum)
- ```
-#### Render Buttons Function
-This function creates the buttons for each sin
-```JavaScript
-function renderButtons() {
-    $("#buttons").empty()
-    for (var i = 0; i < sins.length; i++) {
-        var button = $("<button>");
-        button.text(sins[i])
-        button.attr("data-sin", sins[i])
-        $("#buttons").append(button)
-    }
-}
-```
-How the buttons work
+### Choosing a sin and starting and stoping the gif
+![basic demo](https://github.com/MattRoger/screenshots/blob/master/giphy/GiphyGeneratorDemo.gif?raw=true)
+
+How The gifs play
 ```javascript
-$("#buttons").on("click", "button", function () {
-    $("#gifs_place").empty();
-    console.log(this)
-    var sin = $(this).attr("data-sin");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q="
-        + sin + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
-        $.ajax({
-        url: queryURL,
-        method: "GET"
-    })
-    .then(function (response) {
-            console.log(response);
-            var results = response.data;
-            for (var i = 0; i < results.length; i++) {
-                var gifDiv = $("<div>");
-                gifDiv.addClass("gifimg");
-                var rating = results[i].rating;
-                var p = $("<p>").text("Rating: " + rating);
-                var gifImage = $("<img>").attr("data-state", "still").attr("data-animate", results[i].images.fixed_height.url).attr("data-still", results[i].images.fixed_height_still.url)
-                gifImage.attr("src", results[i].images.fixed_height_still.url);               
-                gifImage.attr("alt", "img failed to load");
-                gifDiv.append(p, gifImage);
-                $("#gifs_place").prepend(gifDiv);                
-            }            
-        });
+    $("#gifs_place").on("click", "img", function () {
+        var state = $(this).attr("data-state");
+            var stillURL = $(this).attr("data-still");    
+        var animateURL = $(this).attr("data-animate")    
+        if (state === "still") {
+            $(this).attr({
+                "src": animateURL,
+                "data-state": "animate"
+      https://github.com/MattRoger/screenshots/blob/master/giphy/searchDemo.gif?raw=true      });    
+        } else {
+            $(this).attr({
+                "src": stillURL,
+                "data-state": "still"
+            })    
+        };    
     })
 ```
-How the seach bar works to add a sin
+### Adding your own sins
+![searchdemo](https://github.com/MattRoger/screenshots/blob/master/giphy/searchDemo.gif?raw=true)
+
+How the search bar works to add a sin
 ```javascript
 $("#add-sin").on("click", function (event) {
         console.log("click")
@@ -92,28 +64,6 @@ $("#add-sin").on("click", function (event) {
     $("#sinnum").empty().text(sinNum);      
 })
 ```
-How The gifs play
-```javascript
-    $("#gifs_place").on("click", "img", function () {
-        var state = $(this).attr("data-state");
-            var stillURL = $(this).attr("data-still");    
-        var animateURL = $(this).attr("data-animate")    
-        if (state === "still") {
-            $(this).attr({
-                "src": animateURL,
-                "data-state": "animate"
-            });    
-        } else {
-            $(this).attr({
-                "src": stillURL,
-                "data-state": "still"
-            })    
-        };    
-    })
-```
-
-## Features
-Each time a new sin is added, the header goes up by one.
 
 ## Installation
 * :trident: Fork it
