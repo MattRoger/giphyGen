@@ -1,5 +1,5 @@
 // sin array is the starting array
-var sins = ["pride", "greed", "wrath", "lust", "envy", "sloth", "Wrath"]
+var sins = ["pride", "greed", "wrath", "lust", "envy", "sloth", "Gluttony"]
 // Used to increase the number of sins in the heading
 var sinNum = sins.length;
 $("#sinnum").text(sinNum)
@@ -44,7 +44,7 @@ $("#buttons").on("click", "button", function () {
             }            
         });
     })
-    
+
     $("#gifs_place").on("click", "img", function () {
         var state = $(this).attr("data-state");
             var stillURL = $(this).attr("data-still");    
@@ -53,17 +53,13 @@ $("#buttons").on("click", "button", function () {
             $(this).attr({
                 "src": animateURL,
                 "data-state": "animate"
-            });
-    
+            });    
         } else {
             $(this).attr({
                 "src": stillURL,
                 "data-state": "still"
-            })
-    
-        };
-    
-    
+            })    
+        };    
     })
     
     $("#add-sin").on("click", function (event) {
