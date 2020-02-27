@@ -1,14 +1,16 @@
 # 7 Deadly Sins giphyGen :smiling_imp:
-This is page searches giphy and displays the results
+This is page searches the Giphy API for gifs. The Page starts out with a button for each of the 7 deadly sins listed as buttons. Each time the user adds a sin, it creats a button. The gifs start paused, and click from the user will play them.
+
 [See The App Live](https://mattroger.github.io/giphyGen/)
 
 ## Motivation
-Click on a button with a sin in it and the page will search the giphy api for that search term using ajax. The page will display 10 paused gifs. To play a gif, simply click on it, to pause it, click again.
+This project uses JavaScript ajax calls to an Giphy API to retrieve gifs using the search term labled on each button.
+
+
+## How To Use
+Click on a button with a sin in it and the page will search the Giphy API for that search term. The page will display 10 paused gifs. To play a gif, simply click on it, to pause it, click again.
 
 You can also create a sin using the input field. Simply type the sin you want and a button with that sin will appear. Click on the button to see the search results
-
-The goal of this project is to demonstrate usage of javascript functions to call and display an api's search results.
-
 
 ## Build Status
 complete :checkered_flag:
