@@ -82,5 +82,3 @@ Add a sin, then click on the button. To get a gif to play or stop simply click o
   * :e-mail: mattroger.webdev@gmail.com
   * :man_office_worker: www.linkedin.com/in/matt-roger/
 
-
-## License
